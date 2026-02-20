@@ -26,7 +26,7 @@ class EstoqueService {
         return produtos;
     }
 
-    async entrada(id, qtd) {
+    async entrada(id, qtd, unidade) {
         const dados = await ler(caminhoArquivo);
         const produtos = JSON.parse(dados || "[]");
 
@@ -34,6 +34,7 @@ class EstoqueService {
         if (!produto) throw new Error(" Produto não encontrado");
 
         produto.quantidade += qtd;
+        produto.unidade += unidade;
 
         await escreve(
             caminhoArquivo,
@@ -43,18 +44,19 @@ class EstoqueService {
         return produto;
     }
 
-    async saida(id, qtd) {
+    async saida(id, qtd, unidade) {
         const dados = await ler(caminhoArquivo);
         const produtos = JSON.parse(dados || "[]");
 
         const produto = produtos.find(produto => produto.id === Number(id));
         if (!produto) throw new Error(" Produto não encontrado");
 
-        if (produto.quantidade < qtd) {
+        if (produto.quantidade < qtd || produto.unidade < unidade) {
             throw new Error(" Estoque insuficiente");
         }
 
         produto.quantidade -= qtd;
+        produto.unidade -= unidade;
 
         await escreve(
             caminhoArquivo,

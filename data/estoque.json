@@ -1,1 +1,42 @@
-[]
+[
+  {
+    "id": 2,
+    "nome": "Acai morango",
+    "quantidade": 1,
+    "fornecedor": "FS",
+    "unidade": 1,
+    "vencimento": "12/02/2026"
+  },
+  {
+    "id": 3,
+    "nome": "Acai banana",
+    "quantidade": 1,
+    "fornecedor": "FS",
+    "unidade": 1,
+    "vencimento": "03/03/2026"
+  },
+  {
+    "id": 4,
+    "nome": "nutella",
+    "quantidade": 1,
+    "fornecedor": "Sabor",
+    "unidade": 1,
+    "vencimento": "04/03/2026"
+  },
+  {
+    "id": 5,
+    "nome": "Picole Chocolate",
+    "quantidade": 1,
+    "fornecedor": "Flash",
+    "unidade": 22,
+    "vencimento": "15/02/2026"
+  },
+  {
+    "id": 6,
+    "nome": "toffe",
+    "quantidade": 1,
+    "fornecedor": "Qwy",
+    "unidade": 1,
+    "vencimento": "20/02/2026"
+  }
+]
