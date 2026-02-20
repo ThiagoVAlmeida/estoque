@@ -1,0 +1,21 @@
+{
+  "name": "estoque",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThiagoVAlmeida/estoque.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ThiagoVAlmeida/estoque/issues"
+  },
+  "homepage": "https://github.com/ThiagoVAlmeida/estoque#readme",
+  "description": ""
+}
