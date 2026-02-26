@@ -25,31 +25,35 @@ module.exports = class Produto {
     }
 
     parseData(vencimento) {
-        function zeroAEsquerda(num) {
-            return num >= 10 ? num : `0${num}`;
-        }
-
-        function formataData(data) {
-            const dia = zeroAEsquerda(data.getDate());
-            const mes = zeroAEsquerda(data.getMonth() + 1);
-            const ano = zeroAEsquerda(data.getFullYear());
-
-            return `${dia}/${mes}/${ano}`;
-        }
-
+        
+        // Data não informada
         if (!vencimento) {
             const data = new Date();
             const dataBrasil = formataData(data);
             return dataBrasil;
         }
+        
+        function formataData(data) {
+            const dia = zeroAEsquerda(data.getDate());
+            const mes = zeroAEsquerda(data.getMonth() + 1);
+            const ano = zeroAEsquerda(data.getFullYear());
+            
+            return `${dia}/${mes}/${ano}`;
+        }
+        
+        function zeroAEsquerda(num) {
+            return num >= 10 ? num : `0${num}`;
+        }
+        
+        // Data informada
         if (vencimento.length !== 8) {
             throw new Error("Data deve ter 8 dígitos no formato DDMMAAAA");
         }
-
+        
         const dia = Number(vencimento.slice(0, 2));
         const mes = Number(vencimento.slice(2, 4));
         const ano = Number(vencimento.slice(4, 8));
-
+        
         const data = new Date(ano, mes - 1, dia);
 
         if (
