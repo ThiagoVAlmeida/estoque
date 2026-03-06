@@ -9,7 +9,7 @@ module.exports = class CaixaService{
         const relatorios = JSON.parse(dados || "[]");
 
         const maiorId = relatorios.reduce((max, p) =>
-            p.id > max ? p.id : max, 0);
+            m.id > max ? m.id : max, 0);
 
         movimento.id = maiorId + 1;
 
